@@ -60,7 +60,7 @@ const RouterContext = React.createClass({
   },
 
   render() {
-    const { history, location, routes, params, components } = this.props
+    const { history, location, routes, params, components, queryParams, onQuery, session } = this.props
     let element = null
 
     if (components) {
@@ -76,7 +76,10 @@ const RouterContext = React.createClass({
           params,
           route,
           routeParams,
-          routes
+          routes,
+          queryParams,
+          onQuery,
+          session
         }
 
         if (isReactChildren(element)) {
